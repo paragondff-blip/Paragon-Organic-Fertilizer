@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্যারাগন জৈব সার</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1B4332; /* Deep Forest Emerald */
+            --primary-light: #2D6A4F;
+            --secondary: #3E2723; /* Rich Soil Espresso Brown */
+            --accent: #F59E0B; /* Vibrant Gold */
+            --background: #F4F7F5; /* Soft Organic Gray-Green tint */
+            --surface: #FFFFFF;
+            --text-main: #1C2E24;
+            --text-muted: #52635A;
+            --border: #D8E2DC;
+            --shadow-sm: 0 2px 8px rgba(27, 67, 50, 0.04);
+            --shadow-md: 0 12px 24px -4px rgba(62, 39, 35, 0.08);
+            --font-display: 'Outfit', 'Hind Siliguri', sans-serif;
+            --font-body: 'Hind Siliguri', sans-serif;
+            --radius-sm: 6px;
+            --radius-md: 14px;
+            --radius-lg: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Utility Components */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .badge {
+            background: var(--accent);
+            color: var(--secondary);
+            padding: 4px 10px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Top Bar Announcement */
+        .top-bar {
+            background: var(--secondary);
+            color: #D7CCC8;
+            font-size: 13px;
+            padding: 10px 0;
+            border-bottom: 2px solid var(--accent);
+        }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar-links a {
+            color: #D7CCC8;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+        .top-bar-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Main Header Architecture */
+        header {
+            background: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100px;
+        }
+        .logo {
+            font-family: var(--font-body);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i {
+            color: var(--accent);
+            font-size: 28px;
+        }
+        .logo span {
+            color: var(--secondary);
+            font-weight: 400;
+        }
+
+        /* Center Column for Marquee and Compact Search */
+        .header-center-block {
+            flex: 0 1 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        /* Continuous Rolling Announcement Text */
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            background: rgba(27, 67, 50, 0.06);
+            padding: 3px 10px;
+            border-radius: 20px;
+            border: 1px dashed rgba(27, 67, 50, 0.2);
+        }
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            animation: marqueeEffect 15s linear infinite;
+        }
+        @keyframes marqueeEffect {
+            0% { transform: translate3d(100%, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        /* Slim & Small Search Infrastructure */
+        .search-container {
+            width: 100%;
+            display: flex;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 8px 16px; /* Reduced Padding for Slim Profile */
+            padding-right: 55px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px; /* Slightly sharper radius for micro design */
+            font-family: var(--font-body);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: #FAFEFA;
+            height: 36px; /* Fixed small height */
+        }
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.08);
+        }
+        .search-btn {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            bottom: 2px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 45px;
+            border-radius: 0 6px 6px 0;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-btn:hover {
+            background: var(--primary-light);
+        }
+
+        /* User Action Nav Controls */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .action-item {
+            position: relative;
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 22px;
+            cursor: pointer;
+            transition: color 0.2s;
+            background: none;
+            border: none;
+        }
+        .action-item:hover {
+            color: var(--primary);
+        }
+        .action-item .counter {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background: var(--accent);
+            color: var(--secondary);
+            font-size: 11px;
+            font-weight: 800;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Luxury Hero Showcase Presentation Grid */
+        .hero-section {
+            margin: 30px 0;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+        .main-banner {
+            background: linear-gradient(135deg, #1B4332 0%, #081C15 100%), url('https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?w=1200&auto=format&fit=crop&q=80');
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius-lg);
+            min-height: 420px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 56px;
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 550px;
+        }
+        .banner-tag {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .banner-title {
+            font-family: var(--font-body);
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .banner-subtitle {
+            color: #D8E2DC;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .cta-btn {
+            background: var(--accent);
+            color: var(--secondary);
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .cta-btn:hover {
+            background: #FFF;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .side-banner {
+            background: linear-gradient(135deg, #3E2723 0%, #261411 100%);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: var(--shadow-md);
+        }
+        .side-banner::after {
+            content: '\f06c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            bottom: -30px;
+            right: -10px;
+            font-size: 160px;
+            opacity: 0.05;
+            color: var(--accent);
+        }
+
+        /* Flash Sale Header Framework & Timer Design */
+        .flash-sale {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+        .flash-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--background);
+            padding-bottom: 20px;
+        }
+        .flash-title-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .flash-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .flash-title i {
+            color: var(--accent);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .timer-container {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            background: #F5EBE6;
+            padding: 6px 14px;
+            border-radius: var(--radius-md);
+        }
+        .timer-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-right: 4px;
+        }
+        .timer-box {
+            background: var(--secondary);
+            color: white;
+            padding: 6px 10px;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-family: var(--font-display);
+            font-size: 14px;
+            min-width: 36px;
+            text-align: center;
+        }
+
+        /* Responsive Product Showcase Grid Layout */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        /* Premium Agricultural Product Card Elements */
+        .product-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.215, 0.610, 0.355, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+        .product-img-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            background: #F0F4F1;
+            overflow: hidden;
+        }
+        .product-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.08);
+        }
+        .discount-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--primary);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            z-index: 2;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .product-category {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            letter-spacing: 0.7px;
+            font-weight: 600;
+        }
+        .product-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 44px;
+        }
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 14px;
+            font-size: 12px;
+            color: var(--accent);
+        }
+        .rating-row span {
+            color: var(--text-muted);
+            margin-left: 6px;
+            font-size: 13px;
+        }
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-top: auto;
+            margin-bottom: 16px;
+        }
+        .current-price {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .old-price {
+            font-family: var(--font-display);
+            font-size: 15px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+        .add-to-cart-btn {
+            width: 100%;
+            background: #F0F5F2;
+            color: var(--primary);
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.25s ease;
+        }
+        .add-to-cart-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Slideout Interactive Basket System Sidebar UI */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -440px;
+            width: 440px;
+            height: 100vh;
+            background: var(--surface);
+            box-shadow: -15px 0 40px rgba(0,0,0,0.12);
+            z-index: 1000;
+            transition: right 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-drawer.open {
+            right: 0;
+        }
+        .cart-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--secondary);
+            color: white;
+        }
+        .cart-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .close-cart {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .close-cart:hover {
+            opacity: 1;
+        }
+        .cart-items-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 24px;
+        }
+        .cart-empty-state {
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 60px;
+        }
+        .cart-empty-state i {
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: var(--border);
+        }
+        .cart-item {
+            display: flex;
+            gap: 16px;
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+        .cart-item-img {
+            width: 70px;
+            height: 70px;
+            border-radius: var(--radius-sm);
+            object-fit: cover;
+            background: #F0F4F1;
+        }
+        .cart-item-details {
+            flex-grow: 1;
+        }
+        .cart-item-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        .cart-item-price {
+            font-size: 15px;
+            color: var(--primary);
+            font-weight: 700;
+            font-family: var(--font-display);
+        }
+        .cart-qty-ctrl {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            width: fit-content;
+            margin-top: 8px;
+        }
+        .cart-qty-btn {
+            background: var(--background);
+            border: none;
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .cart-qty-val {
+            padding: 0 12px;
+            font-size: 13px;
+            font-weight: 700;
+            font-family: var(--font-display);
+        }
+        .remove-item-btn {
+            background: none;
+            border: none;
+            color: #EF4444;
+            cursor: pointer;
+            padding: 8px;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+        .remove-item-btn:hover {
+            color: #DC2626;
+        }
+        .cart-footer {
+            padding: 24px;
+            border-top: 1px solid var(--border);
+            background: #F8FAF9;
+        }
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: var(--secondary);
+        }
+        .cart-total-price {
+            font-family: var(--font-display);
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: 800;
+        }
+        .checkout-btn {
+            width: 100%;
+            background: #00B159;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0, 177, 89, 0.2);
+        }
+        .checkout-btn:hover {
+            background: #00964B;
+        }
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(38, 20, 17, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+            display: none;
+        }
+        .cart-overlay.open {
+            display: block;
+        }
+
+        /* Value Propositions/Features Bar */
+        .features-ribbon {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 36px 0;
+            margin: 60px 0 40px 0;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .feature-icon {
+            font-size: 32px;
+            color: var(--primary);
+        }
+        .feature-text h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 2px;
+        }
+        .feature-text p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Footer Typography and Layout */
+        footer {
+            background: var(--secondary);
+            color: #A1887F;
+            padding: 70px 0 30px 0;
+            font-size: 14px;
+            border-top: 4px solid var(--primary);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand p {
+            margin-top: 18px;
+            line-height: 1.7;
+        }
+        .footer-heading {
+            color: white;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #A1887F;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .payment-badge {
+            background: rgba(255,255,255,0.04);
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 700;
+            color: #E0E0E0;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Screen Size Optimization Layout Adjustments */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .side-banner { display: none; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        }
+        @media (max-width: 768px) {
+            .header-main { flex-direction: column; height: auto; padding: 20px 0; gap: 20px; }
+            .header-center-block { width: 100%; flex: none; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .cart-drawer { width: 100%; right: -100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fa-solid fa-leaf text-accent"></i> প্যারাগন এগ্রো লিমিটেড । প্যারাগন জৈব সার</div>
+            <div class="top-bar-links">
+                <a href="#">ডিলার জোন</a>
+                <a href="#">অর্ডার</a>
+                <a href="#">হেল্পলাইন</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-main">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-seedling"></i> প্যারাগন <span>জৈব সার</span>
+            </a>
+            
+            <div class="header-center-block">
+                <div class="marquee-wrapper">
+                    <div class="marquee-text">
+                        <i class="fa-solid fa-certificate"></i> প্যারাগন এগ্রো লিমিটেড-এর অফিশিয়াল প্রিমিয়াম অর্গানিক স্টোর &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-shield-halved"></i> প্যারাগন জৈব সার মাটিকে পুনরায় উর্বর করে ।  শতভাগ খাঁটি ও ল্যাব সার্টিফাইড জৈব সার
+                    </div>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="জৈব সার বা চাষাবাদের উপাদান খুঁজুন...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="action-item"><i class="fa-regular fa-user"></i></a>
+                <a href="#" class="action-item"><i class="fa-regular fa-heart"></i><span class="counter">0</span></a>
+                <button class="action-item" id="cartToggleBtn">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="counter" id="cartGlobalCounter">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>শপিং ব্যাগ (<span id="cartCountHeader">0</span>)</h3>
+            <button class="close-cart" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items-container" id="cartItemsContainer">
+            <div class="cart-empty-state">
+                <i class="fa-solid fa-seedling"></i>
+                <p>আপনার শপিং ব্যাগ খালি! পুষ্টিকর উপাদান যুক্ত করুন।</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>সর্বমোট মূল্য:</span>
+                <span class="cart-total-price" id="cartTotalPrice">৳ ০</span>
+            </div>
+            <button class="checkout-btn" onclick="alert('আপনার অর্ডার প্রসেসটি সফলভাবে ইনিশিয়েট করা হয়েছে।')">
+                <i class="fa-solid fa-circle-check"></i> অর্ডার কনফার্ম করুন
+            </button>
+        </div>
+    </div>
+
+    <main class="container">
+        
+        <section class="hero-section">
+            <div class="hero-grid">
+                <div class="main-banner">
+                    <div class="banner-content">
+                        <span class="banner-tag">১০০% প্রাকৃতিক ও পরিবেশবান্ধব</span>
+                        <h1 class="banner-title">জৈব সার ব্যবহার করুন । মাটির প্রাণ ফিরিয়ে আনুন সহজেই</h1>
+                        <p class="banner-subtitle">প্যারাগন উন্নতমানের কেঁচো সার (ভার্মিকম্পোস্ট) এবং বিশেষায়িত ফার্টিলাইজার ব্যবহারে ফসলের উৎপাদন বৃদ্ধি পাবে অনন্য মাত্রায়।</p>
+                        <button class="cta-btn" onclick="document.getElementById('productShowcaseRow').scrollIntoView({behavior: 'smooth'});">অফারের পণ্য কিনুন <i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                </div>
+                <div class="side-banner">
+                    <div>
+                        <span class="badge" style="background: var(--primary); color: white;">ডিলার রেট</span>
+                        <h2 style="font-size: 26px; margin-top: 14px; font-weight: 800; color: var(--accent);">ডিলারশিপ অফার</h2>
+                        <p style="font-size: 14px; opacity: 0.8; margin-top: 6px;">কমার্শিয়াল ভলিউমে সর্বোচ্চ কমিশনের সুবর্ণ সুযোগ ২০২৬।</p>
+                    </div>
+                    <a href="#" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 14px;">বিস্তারিত জানুন <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="flash-sale" id="productShowcaseRow">
+            <div class="flash-header">
+                <div class="flash-title-group">
+                    <div class="flash-title"><i class="fa-solid fa-bolt"></i> মেগা সিজনাল অফার</div>
+                    <div class="timer-container">
+                        <div class="timer-label">বুকিং শেষ হতে বাকি:</div>
+                        <div class="timer-box" id="hours">05</div> :
+                        <div class="timer-box" id="minutes">12</div> :
+                        <div class="timer-box" id="seconds">48</div>
+                    </div>
+                </div>
+                <span style="color: var(--text-muted); font-weight: 600; font-size: 14px;">সর্বোচ্চ গুণগত মানের নিশ্চয়তা</span>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+                
+                <div class="product-card" data-id="p1" data-name="প্যারাগন প্রিমিয়াম ভার্মিকম্পোস্ট (কেঁচো সার) - ২৫ কেজি" data-price="৫৮০" data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGdVO5xC7PEOsQx9p83wmAaI2xiJ-iCICp8wBi1tFxqmCwXHtHOhe2a0&s">
+                    <div class="product-img-wrapper">
+                        <span class="discount-tag">জনপ্রিয়</span>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUu-oVNbMxwJikV3cKIgYpMXE2MoDT6CPhVraS6VyoW-qeOZywj14CLl0&s" alt="ভার্মিকম্পোস্ট সার" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Vermicompost</span>
+                        <h4 class="product-name">প্যারাগন প্রিমিয়াম ভার্মিকম্পোস্ট (উচ্চমানের কেঁচোসার) -০১ কেজি বস্তা</h4>
+                        <div class="rating-row">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span>(৪১০টি রিভিউ)</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">৳৮০/span>
+                            <span class="old-price">৳৯৫/span>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> ব্যাগে যুক্ত করুন</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-id="p2" data-name="প্যারাগন অর্গানিক ফার্টিলাইজার - ৪০ কেজি" data-price="৬৭০" data-img="https://www.google.com/imgres?q=upcoming&imgurl=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20241122%2Fourmid%2Fpngtree-stay-tuned-for-upcoming-event-teasers-png-image_14535099.png&imgrefurl=https%3A%2F%2Fpngtree.com%2Fso%2Fupcoming-event&docid=tvcZ-bA26-711M&tbnid=T4W3Won3dkcGbM&vet=12ahUKEwi3r8T2tPKUAxVAVmwGHTgwLYQQnPAOegQIHhAB..i&w=360&h=360&hcb=2&ved=2ahUKEwi3r8T2tPKUAxVAVmwGHTgwLYQQnPAOegQIHhAB#sv=CAMSXhoyKhBlLVRrMG5wRTRMeTZqdFNNMg5UazBucEU0THk2anRTTToOYUNOdDhSc3ZmWE5pak0gBCokCg5UNFczV29uM2RrY0diTRIQZS1UazBucEU0THk2anRTTRgAMAEYByDoq82oBUoIEAEYASABKAE">
+                    <div class="product-img-wrapper">
+                        <span class="discount-tag">-১৫%</span>
+                        <img src="g="https://www.google.com/imgres?q=upcoming%20products&imgurl=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Fnew-product-logo-design-template-suitable-product-label-promotion_393879-2871.jpg&imgrefurl=https%3A%2F%2Fwww.freepik.com%2Fvectors%2Fupcoming-product&docid=aj7S0WPaWeCD1M&tbnid=wkuonzG69EyuIM&vet=12ahUKEwjTjpDiufKUAxUKT2wGHdd-JDMQnPAOegQIHBAB..i&w=626&h=626&hcb=2&ved=2ahUKEwjTjpDiufKUAxUKT2wGHdd-JDMQnPAOegQIHBAB">" alt="জৈব সার বস্তা" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Mixed Organic</span>
+                        <h4 class="product-name">প্যারাগন অর্গানিক ফার্টিলাইজার - ৪০ কেজি বস্তা</h4>
+                        <div class="rating-row">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span>(১৮৫টি রিভিউ)</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">৳৬৭০</span>
+                            <span class="old-price">৳৭৪০</span>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> ব্যাগে যুক্ত করুন</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-id="p3" data-name="প্যারাগন  স্পেশাল মাইক্রো-প্যাক - ৫ কেজি" data-price="১৮০" data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRpLIN8Tbyj2qArxHlD4pmG9lsuo9eAMVuin-D6XN71H0n41oK7kakFY0&s">
+                    <div class="product-img-wrapper">
+                        <span class="discount-tag">নতুন পণ্য</span>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGdVO5xC7PEOsQx9p83wmAaI2xiJ-iCICp8wBi1tFxqmCwXHtHOhe2a0&s" alt="ছাদবাগান সার" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home Gardening</span>
+                        <h4 class="product-name">প্যারাগন ছাদবাগান ও ইনডোর প্ল্যান্ট স্পেশাল কাস্টমাইজড মাইক্রো-নিউট্রিয়েন্ট প্যাক - ৫ কেজি</h4>
+                        <div class="rating-row">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span>(৯২টি রিভিউ)</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">৳১৮০</span>
+                            <span class="old-price">৳২৩০</span>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> ব্যাগে যুক্ত করুন</button>
+                    </div>
+                </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <section class="features-ribbon">
+        <div class="container features-grid">
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                <div class="feature-text">
+                    <h4>১০০% খাটি উপাদান</h4>
+                    <p>কোনো প্রকার ক্ষতিকর রাসায়নিক মিশ্রণ মুক্ত</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                <div class="feature-text">
+                    <h4>সরাসরি ফ্যাক্টরি ডেলিভারি</h4>
+                    <p>সারা দেশে ট্র্যাক বা কার্গো লাইনে হোম ডেলিভারি</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-file-shield"></i></div>
+                <div class="feature-text">
+                    <h4>ল্যাব টেস্টেড ও সার্টিফাইড</h4>
+                    <p>সরকারি কৃষি সম্প্রসারণ মানদণ্ড অনুযায়ী প্রস্তুতকৃত</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-comments"></i></div>
+                <div class="feature-text">
+                    <h4>কৃষিবিদ পরামর্শ সেবা</h4>
+                    <p>সরাসরী প্রয়োজনে সার প্রয়োগের ফ্রি গাইডলাইন</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo" style="color: white; margin-bottom: 18px;">
+                    <i class="fa-solid fa-seedling" style="color: var(--accent);"></i> প্যারাগন জৈব সার
+                </a>
+                <p>প্যারাগন এগ্রো লিমিটেড-এর একটি গর্বিত উদ্যোগ। আধুনিক বিজ্ঞান ও দেশীয় প্রযুক্তির সমন্বয়ে আমরা মাটির উর্বরতা রক্ষা এবং টেকসই কৃষি উন্নয়নে কাজ করে যাচ্ছি নিরন্তর।</p>
+                <div class="payment-methods">
+                    <span class="payment-badge">bKash</span>
+                    <span class="payment-badge">Nagad</span>
+                    <span class="payment-badge">Bank Transfer</span>
+                    <span class="payment-badge">Cash on Delivery</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">পণ্য ও ক্যাটাগরি</h4>
+                <ul class="footer-links">
+                    <li><a href="#">ভার্মিকম্পোস্ট (কেঁচো সার)</a></li>
+                    <li><a href="#">মিক্সড কম্পোস্ট ফার্টিলাইজার</a></li>
+                    <li><a href="#">হাড়ের গুঁড়ো ও ট্রাইকোডার্মা</a></li>
+                    <li><a href="#">ছাদবাগান কাস্টম কিট</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">গ্রাহক ও ডিলার গাইড</h4>
+                <ul class="footer-links">
+                    <li><a href="#">ডিলারশিপ আবেদন ফরম</a></li>
+                    <li><a href="#">পাইকারি ক্রয়ের শর্তাবলী</a></li>
+                    <li><a href="#">সার ব্যবহারের নিয়মাবলী</a></li>
+                    <li><a href="#">ডেলিভারি ট্র্যাকিং পলিসি</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">কর্পোরেট ঠিকানা</h4>
+                <p style="margin-bottom: 14px; color: #D7CCC8;">হেড অফিস: প্যারাগন হাউজ, মহাখালী বাণিজ্যিক এলাকা, ঢাকা-১২১২।</p>
+                <p style="margin-bottom: 8px;"><i class="fa-solid fa-phone-volume"></i> +৮৮০ ১৩২৪৪১৩২৮২-প্যারাগন জৈব সার</p>
+                <p><i class="fa-solid fa-envelope"></i> info.fertilizer@paragon.com.bd</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; ২০২৬ প্যারাগন এগ্রো লিমিটেড। সর্বস্বত্ব সংরক্ষিত। ডিজাইন ও ডেভেলপমেন্ট বাই এলিট ফ্রন্টএন্ড কোডার্স।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reactive Cart State Memory Storage
+        let cartMemory = [];
+
+        // Dynamic Elements Selectors Pointers
+        const cartToggleBtn = document.getElementById('cartToggleBtn');
+        const closeCartBtn = document.getElementById('closeCartBtn');
+        const cartDrawer = document.getElementById('cartDrawer');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartItemsContainer = document.getElementById('cartItemsContainer');
+        const cartGlobalCounter = document.getElementById('cartGlobalCounter');
+        const cartCountHeader = document.getElementById('cartCountHeader');
+        const cartTotalPrice = document.getElementById('cartTotalPrice');
+        const productGrid = document.getElementById('productGrid');
+
+        // Drawer Animation Actions 
+        function showCartDrawer() {
+            cartDrawer.classList.add('open');
+            cartOverlay.classList.add('open');
+        }
+
+        function hideCartDrawer() {
+            cartDrawer.classList.remove('open');
+            cartOverlay.classList.remove('open');
+        }
+
+        cartToggleBtn.addEventListener('click', showCartDrawer);
+        closeCartBtn.addEventListener('click', hideCartDrawer);
+        cartOverlay.addEventListener('click', hideCartDrawer);
+
+        // Render Cart Engine UI Sync
+        function syncCartInterface() {
+            if (cartMemory.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-empty-state">
+                        <i class="fa-solid fa-seedling"></i>
+                        <p>আপনার শপিং ব্যাগ খালি! মাটির পুষ্টিকর উপাদান যুক্ত করুন।</p>
+                    </div>
+                `;
+                cartGlobalCounter.textContent = '0';
+                cartCountHeader.textContent = '0';
+                cartTotalPrice.textContent = '৳ ০';
+                return;
+            }
+
+            let aggregateTotal = 0;
+            let aggregateQty = 0;
+            cartItemsContainer.innerHTML = '';
+
+            cartMemory.forEach(product => {
+                aggregateTotal += (product.price * product.quantity);
+                aggregateQty += product.quantity;
+
+                const cartRowNode = document.createElement('div');
+                cartRowNode.className = 'cart-item';
+                cartRowNode.innerHTML = `
+                    <img src="${product.img}" alt="${product.name}" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <h5 class="cart-item-title">${product.name}</h5>
+                        <span class="cart-item-price">৳${product.price}</span>
+                        <div class="cart-qty-ctrl">
+                            <button class="cart-qty-btn dec-item" data-id="${product.id}">-</button>
+                            <span class="cart-qty-val">${product.quantity}</span>
+                            <button class="cart-qty-btn inc-item" data-id="${product.id}">+</button>
+                        </div>
+                    </div>
+                    <button class="remove-item-btn" data-id="${product.id}"><i class="fa-regular fa-trash-can"></i></button>
+                `;
+                cartItemsContainer.appendChild(cartRowNode);
+            });
+
+            cartGlobalCounter.textContent = aggregateQty;
+            cartCountHeader.textContent = aggregateQty;
+            cartTotalPrice.textContent = `৳ ${aggregateTotal}`;
+
+            initializeCartInternalEventListeners();
+        }
+
+        function pushProductToCart(payload) {
+            const indexMatch = cartMemory.find(item => item.id === payload.id);
+            if (indexMatch) {
+                indexMatch.quantity += 1;
+            } else {
+                cartMemory.push({
+                    id: payload.id,
+                    name: payload.name,
+                    price: parseInt(payload.price),
+                    img: payload.img,
+                    quantity: 1
+                });
+            }
+            syncCartInterface();
+            showCartDrawer();
+        }
+
+        function initializeCartInternalEventListeners() {
+            document.querySelectorAll('.inc-item').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const rowId = e.target.getAttribute('data-id');
+                    const instance = cartMemory.find(item => item.id === rowId);
+                    if (instance) instance.quantity += 1;
+                    syncCartInterface();
+                });
+            });
+
+            document.querySelectorAll('.dec-item').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const rowId = e.target.getAttribute('data-id');
+                    const instance = cartMemory.find(item => item.id === rowId);
+                    if (instance && instance.quantity > 1) {
+                        instance.quantity -= 1;
+                    } else if (instance && instance.quantity === 1) {
+                        cartMemory = cartMemory.filter(item => item.id !== rowId);
+                    }
+                    syncCartInterface();
+                });
+            });
+
+            document.querySelectorAll('.remove-item-btn').forEach(button => {
+                button.closest('.remove-item-btn').addEventListener('click', (e) => {
+                    const rowId = e.currentTarget.getAttribute('data-id');
+                    cartMemory = cartMemory.filter(item => item.id !== rowId);
+                    syncCartInterface();
+                });
+            });
+        }
+
+        // Event Interception delegator for Main Product Listing Grid Cards
+        productGrid.addEventListener('click', (event) => {
+            const originatingBtn = event.target.closest('.add-to-cart-btn');
+            if (!originatingBtn) return;
+
+            const baseCard = originatingBtn.closest('.product-card');
+            const dataBundle = {
+                id: baseCard.getAttribute('data-id'),
+                name: baseCard.getAttribute('data-name'),
+                price: baseCard.getAttribute('data-price'),
+                img: baseCard.getAttribute('data-img')
+            };
+            pushProductToCart(dataBundle);
+        });
+
+        // Numerical Countdown Dynamic Clock Logic Engine
+        function startFlashSaleTimer() {
+            let hElement = document.getElementById('hours');
+            let mElement = document.getElementById('minutes');
+            let sElement = document.getElementById('seconds');
+
+            let hoursVal = parseInt(hElement.textContent);
+            let minsVal = parseInt(mElement.textContent);
+            let secsVal = parseInt(sElement.textContent);
+
+            const internalTicker = setInterval(() => {
+                if(secsVal > 0) {
+                    secsVal--;
+                } else {
+                    if(minsVal > 0) {
+                        minsVal--;
+                        secsVal = 59;
+                    } else {
+                        if(hoursVal > 0) {
+                            hoursVal--;
+                            minsVal = 59;
+                            secsVal = 59;
+                        } else {
+                            clearInterval(internalTicker);
+                        }
+                    }
+                }
+                hElement.textContent = String(hoursVal).padStart(2, '0');
+                mElement.textContent = String(minsVal).padStart(2, '0');
+                sElement.textContent = String(secsVal).padStart(2, '0');
+            }, 1000);
+        }
+        
+        // Initialization Boot Trigger
+        window.addEventListener('DOMContentLoaded', () => {
+            startFlashSaleTimer();
+        });
+    </script>
+</body>
+</html>
